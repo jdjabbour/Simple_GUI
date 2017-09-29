@@ -18,7 +18,6 @@ def find_ip():
 def public_info():
     ip = urllib.urlopen('http://wtfismyip.com/json').read()
     a = [i for i in ip.split()]
-    print(a)
     ip_add = re.findall(r'[0-9]{1,2}\W[0-9]{1,3}\W[0-9]{1,3}\W[0-9]{1,}', a[2])
     t3.insert(END, ip_add)
     city = a[4]
@@ -32,7 +31,6 @@ def public_info():
     isp2 = a[12]
     isp3 = a[13]
     isp = isp1 + " " + isp2 + " " + isp3
-    print(type(isp))
     t6.insert(END, isp)
 
 l1 = Label(root, text="Local IP")
